@@ -10,6 +10,8 @@ import Services from "./pages/Services";
 import Industries from "./pages/Industries";
 import Infrastructure from "./pages/Infrastructure";
 import Contact from "./pages/Contact";
+import Quality from "./pages/Quality";
+import Careers from "./pages/Careers";
 
 export default function App() {
   return (
@@ -23,6 +25,8 @@ export default function App() {
         <Route path="/industries" element={<Industries />} />
         <Route path="/infrastructure" element={<Infrastructure />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/quality" element={<Quality />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
 
       <Footer />

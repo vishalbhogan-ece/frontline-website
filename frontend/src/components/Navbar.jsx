@@ -21,6 +21,8 @@ export default function Navbar()
           <Link to="/industries">Industries</Link>
           <Link to="/infrastructure">Infrastructure</Link>
           <Link to="/contact">Contact</Link>
+          <Link to="/quality">Quality</Link>
+          <Link to="/careers">Careers</Link>
 
         </div>
       </div>

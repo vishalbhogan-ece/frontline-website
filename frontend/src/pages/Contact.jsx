@@ -1,23 +1,32 @@
 import React from "react";
-import ContactForm from "../components/ContactForm";
+import RFQForm from "../components/RFQForm";
 
 export default function Contact() {
   return (
-    <div className="min-h-screen py-16 px-6 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
+    <div className="max-w-7xl mx-auto px-6 py-20">
 
-        <h1 className="text-4xl font-bold mb-4">
-          Request a Quote
-        </h1>
+      <h1 className="text-5xl font-bold mb-10">
+        Contact Us
+      </h1>
 
-        <p className="text-gray-600 mb-10">
-          Contact Frontline Electronics for PCB Assembly, Box Build,
-          Product Design, Testing and Electronics Manufacturing Services.
-        </p>
+      <div className="grid md:grid-cols-2 gap-12">
 
-        <ContactForm />
+        <div>
+
+          <h2 className="text-2xl font-bold mb-4">
+            Manufacturing Locations
+          </h2>
+
+          <p>Pune Plant</p>
+          <p>Bengaluru Plant</p>
+          <p>Manesar Plant</p>
+
+        </div>
+
+        <RFQForm />
 
       </div>
+
     </div>
   );
 }
