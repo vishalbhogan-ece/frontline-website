@@ -1,10 +1,14 @@
+
+// src/pages/Home.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <div>
-      {/* Hero */}
-      <section className="relative h-screen">
+      {/* Hero Section - Full Screen with Gradient Overlay */}
+      <section className="relative min-h-screen flex items-center">
+        {/* Background Video */}
         <video
           autoPlay
           muted
@@ -12,80 +16,107 @@ export default function Home() {
           playsInline
           poster="/poster.jpg"
           preload="metadata"
-          className="absolute w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/smt.webm" type="video/webm" />
           <source src="/smt.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/70"></div>
-        <div className="relative z-10 flex flex-col justify-center items-center h-full text-white text-center px-4">
-          <h1 className="text-6xl font-bold max-w-5xl">
-            Electronics Manufacturing Services
-          </h1>
-          <p className="mt-6 text-xl max-w-3xl">
-            From Prototype Development to Mass Production.
-            Reliable EMS solutions for Automotive, Industrial,
-            Telecom and Consumer Electronics.
-          </p>
-          <div className="mt-8 flex gap-4 flex-wrap justify-center">
-            <a
-              href="/contact"
-              className="bg-blue-700 px-8 py-4 rounded-lg hover:bg-blue-800 transition"
-            >
-              Request Quote
-            </a>
-            <button className="border border-white px-8 py-4 rounded-lg hover:bg-white/10 transition">
-              Download Brochure
-            </button>
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-white">
+          <div className="max-w-3xl">
+            <span className="inline-block bg-blue-600/20 text-blue-300 px-4 py-1 rounded-full text-sm font-medium mb-4">
+              IATF 16949 • ISO 9001 • ISO 14001 • ISO 45001
+            </span>
+
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+              Engineering Intelligence Into Every Product
+            </h1>
+
+            <p className="mt-6 text-xl md:text-2xl text-gray-200 leading-relaxed">
+              From Prototype to Mass Production — Reliable EMS solutions for
+              Automotive, Industrial, Telecom, Medical & Defense sectors since
+              1993.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                to="/contact"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition"
+              >
+                Request a Quote
+              </Link>
+
+              <Link
+                to="/services"
+                className="border-2 border-white hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition"
+              >
+                Our Services
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/70 rounded-full mt-2"></div>
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-20 bg-gray-100">
+      {/* Trust Bar */}
+      <section className="py-16 bg-white border-b">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-xl shadow">
-              <h3 className="font-bold text-xl mb-3">PCB Assembly</h3>
-              <p>SMT, Through-Hole and Mixed Technology Assembly.</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <p className="text-4xl font-bold text-blue-900">30+</p>
+              <p className="text-gray-600 mt-1">Years of Excellence</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow">
-              <h3 className="font-bold text-xl mb-3">Testing</h3>
-              <p>AOI, Flying Probe and Functional Testing.</p>
+
+            <div>
+              <p className="text-4xl font-bold text-blue-900">3</p>
+              <p className="text-gray-600 mt-1">Manufacturing Plants</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow">
-              <h3 className="font-bold text-xl mb-3">Product Development</h3>
-              <p>Embedded Electronics and PCB Design.</p>
+
+            <div>
+              <p className="text-4xl font-bold text-blue-900">4</p>
+              <p className="text-gray-600 mt-1">Global Certifications</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow">
-              <h3 className="font-bold text-xl mb-3">Box Build</h3>
-              <p>Complete System Integration Solutions.</p>
+
+            <div>
+              <p className="text-4xl font-bold text-blue-900">500+</p>
+              <p className="text-gray-600 mt-1">Skilled Professionals</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Locations */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12">Manufacturing Facilities</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="shadow rounded-xl p-6">
-              <h3 className="font-bold text-2xl">Pune</h3>
-              <p className="mt-4">Chakan MIDC Manufacturing Facility</p>
-            </div>
-            <div className="shadow rounded-xl p-6">
-              <h3 className="font-bold text-2xl">Bengaluru</h3>
-              <p className="mt-4">Bommasandra Industrial Area</p>
-            </div>
-            <div className="shadow rounded-xl p-6">
-              <h3 className="font-bold text-2xl">Manesar</h3>
-              <p className="mt-4">IMT Manesar Manufacturing Facility</p>
-            </div>
+      {/* Certifications */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            Our Certifications
+          </h2>
+
+          <div className="flex flex-wrap justify-center gap-8">
+            {["IATF 16949", "ISO 9001", "ISO 14001", "ISO 45001"].map(
+              (cert) => (
+                <div
+                  key={cert}
+                  className="bg-white px-6 py-3 rounded-lg shadow-sm border hover:shadow-md transition"
+                >
+                  <span className="font-semibold text-gray-800">{cert}</span>
+                </div>
+              )
+            )}
           </div>
         </div>
       </section>
     </div>
   );
 }
+
